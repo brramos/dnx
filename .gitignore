@@ -235,3 +235,5 @@ _Pvt_Extensions
 
 .idea/
 wwwroot/lib/
+**/*.min.js
+**/*.min.css

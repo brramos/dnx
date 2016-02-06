@@ -16,11 +16,11 @@ var paths = {
   minCss: webroot + "css/**/*.min.css",
   concatJsDest: webroot + "js/site.min.js",
   concatCssDest: webroot + "css/site.min.css",
-  angularApp: [
-    webroot + "app/app.module.js",
-    webroot + "app/app.config.js",
-    webroot + "app/**/*.js"
-  ]
+  angularApp: {
+		module: webroot + "app/app.module.js",
+		config: webroot + "app/app.config.js",
+		js: webroot + "app/**/*.js"
+	}
 };
 
 gulp.task("clean:js", function (cb) {
@@ -34,7 +34,7 @@ gulp.task("clean:css", function (cb) {
 gulp.task("clean", ["clean:js", "clean:css"]);
 
 gulp.task("min:js", function () {
-  return gulp.src([paths.js, "!" + paths.minJs, paths.angularApp], {
+  return gulp.src([paths.js, "!" + paths.minJs, paths.angularApp.module, paths.angularApp.config, paths.angularApp.js], {
     base: "."
   })
     .pipe(concat(paths.concatJsDest))

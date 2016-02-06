@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('app').config(['$locationProvider, $urlRouterProvider', '$stateProvider',
+  angular.module('app').config(['$locationProvider', '$urlRouterProvider', '$stateProvider',
     function ($locationProvider, $urlRouterProvider, $stateProvider) {
       $locationProvider.html5Mode(true);
       $urlRouterProvider.otherwise('/');
